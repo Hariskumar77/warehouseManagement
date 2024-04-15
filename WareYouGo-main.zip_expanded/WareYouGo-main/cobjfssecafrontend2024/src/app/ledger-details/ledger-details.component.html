@@ -1,0 +1,178 @@
+<div class="container-details">
+  <div class="left-sub-container ">
+      <div class="top-sub-container ">
+          <div class="left-sub-sub-container ">
+            <div class="cards-container">
+                <div class="left-cards">
+                  <div class="left-upper-cards">
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/stock.png" width="30px" height="30px"/>
+                         Product Stock
+                      </div>
+                      <div class="div-body">
+                        {{ledger.product.currentStock}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/inbound.png" width="30px" height="30px"/>
+                        Product Inbounds
+                      </div>
+                      <div class="div-body">
+                        {{productSales.inbound.length}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/inventory_value.png" width="30px" height="30px"/>
+                        Product Inventory Value
+                      </div>
+                      <div class="div-body">
+                        {{ledger.product.unitCost*ledger.product.currentStock | currency : 'INR'}}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="left-bottom-cards">
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/broken.png" width="30px" height="30px"/>
+                        Damaged Product Count
+                      </div>
+                      <div class="div-body">
+                        {{ledger.product.damagedStock}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/outbound.png" width="30px" height="30px"/>
+                        Product Outbounds
+                      </div>
+                      <div class="div-body">
+                        {{productSales.outbound.length}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/sales.png" width="30px" height="30px"/>
+                        Product Sales
+                      </div>
+                      <div class="div-body">
+                        {{productSalesValue | currency: 'INR'}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="right-cards">
+                  <div class="cards">
+                    <div class="div-header" style="justify-content: center;">
+                      Product details
+                    </div>
+                    <div class="div-body"> 
+                    <span class ="label">Name</span>{{ledger.product.name}}
+                  </div>
+                  <div class="div-body"> 
+                    <span class="label">Cost</span>{{ledger.product.unitCost | currency: 'INR'}}
+                  </div>
+                  <div class="div-body"> 
+                    <span class="label">Length</span>{{ledger.product.length}} {{ledger.product.uom}}
+                  </div>
+                  <div class="div-body"> 
+                    <span class="label">Height</span>{{ledger.product.height}} {{ledger.product.uom}}
+                  </div>
+                  <div class="div-body"> 
+                    <span class="label">Width </span>{{ledger.product.width}} {{ledger.product.uom}}
+                  </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="bottom-sub-container">
+          <div class="bottom-cards" style="background-color: #fff;">
+              <div>
+              <h3 >Ledger details</h3>
+            </div>
+            <div class="detail" class="cards">
+              <img  src="../../assets/images/created_at.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Created At</div>
+              <div class ="detail-content-value"> {{ledger.inOutTime | date:'short'}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/worker.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Placed By</div>
+              <div class ="detail-content-value"> {{ledger.user.name}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/truck.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Movement</div>
+              <div class ="detail-content-value"> {{ledger.ledgerMode}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/quantity.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Quantity</div>
+              <div class ="detail-content-value"> {{ledger.quantity}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/supplier.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Supplier</div>
+              <div class ="detail-content-value"> {{ledger.supplier}}</div>
+            </div>
+          </div>
+          <div class="bottom-cards" style="background-color: #fff;">
+              <div>
+              <h3>Location details</h3>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/rack.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Rack ID</div>
+              <div class ="detail-content-value"> {{ledger.location.rackId}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/shelf.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Shelf ID</div>
+              <div class ="detail-content-value"> {{ledger.location.shelfId}}</div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/dimension.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Total Volume</div>
+              <div class ="detail-content-value"> {{ledger.location.length*ledger.location.width*ledger.location.height}} {{ledger.product.uom}} <sup>3</sup> </div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/volume_occupied.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Volume Occupied</div>
+              <div class ="detail-content-value"> {{ledger.product.length*ledger.product.width*ledger.product.height*ledger.quantity}} {{ledger.product.uom}} <sup>3</sup></div>
+            </div>
+            <div class="detail" class="cards">
+              <img src="../../assets/images/volume_remaining.png" width="50px" height="50px"/>
+              <div class ="detail-content-label"> Space Remaining</div>
+              <div class ="detail-content-value"> {{ledger.location.length*ledger.location.width*ledger.location.height-
+                (ledger.product.length*ledger.product.width*ledger.product.height*ledger.quantity)}} {{ledger.product.uom}} <sup>3</sup> </div>
+            </div>
+            
+          </div>
+      </div>
+  </div>
+  <div class="right-sub-container">
+      <div>
+        <h4 style ="font-size: 20px;padding: 15px;">Other ledgers of this product</h4>
+      </div>
+      <div *ngIf='!productLedgers.length'>
+        <img src="../../assets/images/nothing.png" width="200" height=""/>
+        <div>This product has no other ledgers</div>
+      </div>
+        <div class="ledger-row" style="font-weight: bold; background-color: #b4b4b4;" *ngIf='productLedgers.length'>
+          <div class="col-1" >Ledger ID</div>
+          <div class="col-2">Movement</div>
+          <div class="col-3">Quantity</div>
+        </div>
+        
+      <ng-container *ngFor='let ledger of productLedgers' >
+        <div class="ledger-row clickable-row" [routerLink]="['/ledgers', ledger.ledgerId]">
+          <div class="col-1">{{ledger.ledgerId}}</div>
+          <div class="col-2">{{ledger.ledgerMode}}</div>
+          <div class="col-3">{{ledger.quantity}}</div>
+        </div>
+      </ng-container>
+  </div>
+</div>

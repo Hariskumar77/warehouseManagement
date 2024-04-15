@@ -1,0 +1,16 @@
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  
+  /* Positioning for specific text elements */
+  .bottom-left,
+  .top-left,
+  .top-right,
+  .bottom-right,
+  .centered {
+    position: absolute;
+    /* Adjust positioning as needed */
+  }
+  

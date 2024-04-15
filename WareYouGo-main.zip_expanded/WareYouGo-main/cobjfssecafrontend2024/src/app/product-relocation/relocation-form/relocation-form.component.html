@@ -1,0 +1,181 @@
+<div id="container" class="product-relocation-container">
+  <div class="form-container">
+    <h2 class="form-heading">Product Relocation</h2>
+    <br/>
+    <form [formGroup]="relocationForm" (ngSubmit)="onRelocationSubmit()">
+      <div class="form-row">
+        <!-- Column 1 -->
+        <div class="form-column">
+          <!-- Place half of your form groups here -->
+          <div class="form-group">
+            <label for="relocationReason">Relocation Reason*</label>
+            <select
+              class="form-control"
+              id="relocationReason"
+              formControlName="relocationReason"
+            >
+              <option value="" selected>--Relocation Reason--</option>
+              <option value="internalMovement">Internal Movement</option>
+              <option value="rejectionReturn">Rejection/Return</option>
+              <option value="damaged">Damaged</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="productName">Product Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productName"
+              formControlName="productName"
+              placeholder="Enter Product Name"
+              
+            />
+          </div>
+          <div class="form-group">
+            <label for="productCode">Product ID*</label>
+            <input
+              type="text"
+              class="form-control"
+              id="productCode"
+              formControlName="productCode"
+              placeholder="Enter Product ID"
+              (input)="onProductIdChange($event.target.value)"
+              required
+              
+            />
+          </div>
+
+          <div class="dimension-group">
+            <div class="form-group">
+              <label for="productDimensionsLength">Length</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productDimensionsLength"
+                formControlName="productDimensionsLength"
+                placeholder="Length"
+                
+              />
+            </div>
+            <div class="form-group">
+              <label for="productDimensionsWidth">Width</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productDimensionsWidth"
+                formControlName="productDimensionsWidth"
+                placeholder="Width"
+                
+              />
+            </div>
+            <div class="form-group">
+              <label for="productDimensionsHeight">Height</label>
+              <input
+                type="number"
+                class="form-control"
+                id="productDimensionsHeight"
+                formControlName="productDimensionsHeight"
+                placeholder="Height"
+                
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="form-column">
+          <!-- Place the other half of your form groups here -->
+          <div class="form-group">
+            <label for="productWeight">Product Weight</label>
+            <input
+              type="number"
+              class="form-control"
+              id="productWeight"
+              formControlName="productWeight"
+              placeholder="Enter Product Weight"
+              
+            />
+          </div>
+          <!-- <div class="form-group">
+            <label for="purchaseOrderNo">Purchase Order No.</label>
+            <input
+              type="text"
+              class="form-control"
+              id="purchaseOrderNo"
+              formControlName="purchaseOrderNo"
+              placeholder="Enter Purchase Order No"
+            />
+          </div>
+          <div class="form-group">
+            <label for="dateOfDelivery">Date of Delivery</label>
+            <input
+              type="date"
+              class="form-control"
+              id="dateOfDelivery"
+              formControlName="dateOfDelivery"
+              placeholder="Enter Date of Delivery"
+            />
+          </div> -->
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea
+              class="form-control"
+              id="comments"
+              formControlName="comments"
+              rows="3"
+              placeholder="Write your comments"
+            ></textarea>
+          </div>
+        </div>
+      </div>
+      <!-- Rest of your form -->
+      <div class="button-group-row">
+        <button type="submit" class="btn btn-primary btn-color">Save</button>
+      </div>
+    </form>
+    <div style="padding: 30px 100px" *ngIf="buttonsFlag">
+      <h4 class="form-heading">
+        Given product '{{product.name}}' with ID '{{product.productId}}' is available in these locations
+      </h4>
+      <table class="table table-striped" style="text-align: center">
+        <thead>
+          <tr>
+            <th>Location ID</th>
+            <th>Rack</th>
+            <th>Shelf</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations">
+            <td>{{location.locationId}}</td>
+            <td>{{location.rackId}}</td>
+            <td>{{location.shelfId}}</td>
+            <td>
+              <input type="radio" name="location" [(ngModel)]="selectedLocation" [value]="location.locationId"/>
+            </td>
+          </tr>
+          <tr>           
+        </tbody>
+      </table>
+    </div>
+    <div class="button-group-row" *ngIf="buttonsFlag">
+      <button
+        class="btn btn-primary btn-color"
+        style="width: 18%"
+        (click)="displayLocationSuggestions()"
+        [disabled]="!selectedLocation"
+      >
+        Location Suggestions
+      </button>
+      <button
+        class="btn btn-primary btn-color"
+        style="width: 18%"
+        (click)="displayManualEntry()"
+        [disabled]="!selectedLocation"
+      >
+        Manual Entry
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+
+<div class="add-location-container" *ngIf="!isFetched">
+  <form class="form-container" [formGroup]="locationdeleteform" (ngSubmit)="onSubmit()">
+    <h2 class="form-heading">Delete Location</h2>
+    
+    <div class="form-group">
+      <label for="locationId">Enter Location ID</label>
+      <input type="number" id="locationId" class="form-control" placeholder="Enter location ID" formControlName="locationId" required>
+    </div> 
+
+    <div class="button-container">
+      <button [disabled]="!locationdeleteform.valid" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

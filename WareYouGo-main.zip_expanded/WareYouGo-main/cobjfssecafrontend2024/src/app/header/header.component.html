@@ -1,0 +1,52 @@
+ <header>
+    <nav>
+        <ul>
+            <div class="left-side">
+                <li><a href="/dashboard"><i class="fa fa-solid fa-house-user"></i>Home</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-exchange-alt"></i>  Product Transfer <i class="fa fa-solid fa-bars"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#">Product Cart</a>
+                        <a href="/product-inbound">Inbound Requisition Form</a>
+                        <a href="/product-outbound">Outbound Requisition Form</a>
+                        <a href="/product-relocation">Product Relocation</a>
+                    </div>
+                </li>
+                <li><a href=""><i class="fas fa-shield-alt"></i> Safety Stock Indicator</a></li>
+                <div class="dropdown">
+                    <li><a href="/inventory"><i class="fas fa-warehouse"></i> Inventory</a></li>
+                    <div class="dropdown-content">
+                        <a href="/inventory">Inventory Home</a>
+                        <a href="/ledgers">Ledgers</a>
+                        <a href="/analytics">Analytics</a>
+                    </div>
+                </div>
+                
+
+                <li><a href="/requestaccess"><i class="fas fa-user"></i> Pending Requests</a></li>
+                <!--  -->
+                <li *ngIf="user.userType === 3"><a href=""><i class="fas fa-shield-alt"></i> Safety Stock Indicator</a></li>
+                <li *ngIf="user.userType === 1"><a href="/requestaccess"><i class="fas fa-user"></i> Pending Requests</a></li>
+            </div>
+            <li class="center"><h1>Ware-You-Go</h1></li>
+            <div class="right-side">
+                <li><a href="/changepassword"><i class="fas fa-key"></i> Change Password</a></li>
+                <li class="user-profile">
+                    <a href="#"><i class="fas fa-user"></i> User Profile <i class="fa fa-solid fa-bars"></i></a>
+                    <div class="side-panel">
+                        <table>
+                            <tr><td><strong>Name</strong></td> <td>{{ user.name }}</td></tr> <br>
+                            <tr><td><strong>Email</strong></td> <td>{{ user.email }}</td></tr> <br>
+                            <tr><td><strong>Mobile</strong></td> <td>{{ user.mobileNumber }}</td></tr> <br>
+                            <tr><td><strong>User Type</strong></td> <td>{{ user.userType }}</td></tr> <br>
+                        </table>
+                        <button class="logout-button" (click) = "userLogout()">Logout</button>
+                        <button class="edit-button" (click) = "userEdit()">Edit</button>
+                       
+                    </div>
+                </li>
+            </div>
+        </ul>
+    </nav>
+</header>
+<router-outlet></router-outlet>

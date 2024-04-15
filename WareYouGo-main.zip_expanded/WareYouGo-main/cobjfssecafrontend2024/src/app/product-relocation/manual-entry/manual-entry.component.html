@@ -1,0 +1,82 @@
+<div id="container" class="product-relocation-container">
+  <div class="form-container">
+    <h2 class="form-heading">Product Relocation - Manual Entry</h2>
+    <div style="padding: 30px 100px">
+      <p *ngIf="showProductLocationId">Old Location Id : {{ oldLocationId }}</p>
+      <p *ngIf="showProductLocationId">Product Id : {{ productId }}</p>
+      <form [formGroup]="manualEntryForm" (ngSubmit)="onManualEntrySubmit()">
+        <div class="form-column">
+          <div class="form-group">
+            <label for="rackId">Rack</label>
+            <input
+              type="number"
+              class="form-control"
+              id="rackId"
+              formControlName="rackId"
+              placeholder="Enter Rack ID"
+            />
+          </div>
+          <div class="form-group">
+            <label for="shelfId">Shelf</label>
+            <input
+              type="number"
+              class="form-control"
+              id="shelfId"
+              formControlName="shelfId"
+              placeholder="Enter Shelf ID"
+            />
+          </div>
+          <button
+            class="btn btn-primary btn-color"
+            style="width: 40%"
+            type="submit"
+          >
+            Check for Availability
+          </button>
+        </div>
+      </form>
+      <br />
+      <br />
+      <table
+        class="table table-striped"
+        style="text-align: center"
+        *ngIf="filteredLocation.length > 0"
+      >
+        <thead>
+          <tr>
+            <th>Location ID</th>
+            <th>Rack</th>
+            <th>Shelf</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of filteredLocation">
+            <td>{{ item.location.locationId }}</td>
+            <td>{{ item.location.rackId }}</td>
+            <td>{{ item.location.shelfId }}</td>
+            <td>
+              <input
+                type="radio"
+                name="location"
+                [(ngModel)]="selectedLocation"
+                [value]="item.location.locationId"
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-group-row" *ngIf="filteredLocation.length > 0">
+        <button
+          type="submit"
+          class="btn btn-primary btn-color"
+          style="width: 40%"
+          (click)="temporaryBlock()"
+          [disabled]="!selectedLocation"
+        >
+          Temporary Block
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

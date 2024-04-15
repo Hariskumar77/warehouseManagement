@@ -1,0 +1,44 @@
+<div style="margin: 10px; display: flex; justify-content: space-between;">
+    <div style="align-content: center; flex: 1; font-size: 30px; font-weight: bold;">
+        Ledgers ({{filteringLedger.length}})
+    </div>
+    <div  style="float: right; ">
+        <input type="text" id="search" #criteria
+                (input)="updateCriteria(criteria.value)"
+                placeholder="Search products"/>
+        <button [disabled]='!filteringLedger.length' (click)='generateJPG()'><img class="icons" src ="../../assets/images/jpg.png">JPG</button>
+        <button [disabled]='!filteringLedger.length' (click)='generatePDF()'><img class="icons" src ="../../assets/images/pdf.png">PDF</button>
+        <button [disabled]='!filteringLedger.length' (click)='generateExcel()'><img class="icons" src ="../../assets/images/sheet.png">Excel</button>
+        
+    </div>
+</div>
+<div  [ngClass]='filteringLedger.length?"table-container":"not-found"' class="table-container" style="border: 0px solid black;">
+    <img *ngIf='!filteringLedger.length' id="nothing" src="../../assets/images/nothing.png" width="400" height="400"/>
+        <div *ngIf='!filteringLedger.length'>No Records Found</div>
+    <table #product   id="ledgers" class="flex-table" >
+        <thead *ngIf='filteringLedger.length' style="position: sticky; top: 0px; background-color: white; z-index: 1;">
+            <tr style="background-color: #9f9f9f;">
+                <th>Ledger Id</th>
+                <th>Rack</th>
+                <th>Shelf</th>
+                <th>Quantity</th>
+                <th>Product Name</th>
+                <th>Created at</th>
+                <th>Movement</th>
+            </tr>
+        </thead>
+        <tbody>
+            <ng-container *ngFor="let a of filteringLedger">
+                <tr class="clickable-row" [routerLink]="['/ledgers', a.ledgerId]">
+                    <td>{{a.ledgerId}}</td>
+                    <td>{{a.location.shelfId}}</td>
+                    <td>{{a.location.rackId}}</td>
+                    <td>{{a.quantity}}</td>
+                    <td>{{a.product.name}}</td>
+                    <td>{{a.inOutTime| date:'medium' }}</td>
+                    <td>{{a.ledgerMode}}</td> 
+                </tr>
+            </ng-container>
+        </tbody>
+    </table>
+</div>

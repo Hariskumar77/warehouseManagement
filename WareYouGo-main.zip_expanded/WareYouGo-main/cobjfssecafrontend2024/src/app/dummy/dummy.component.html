@@ -1,0 +1,123 @@
+
+<div class="container-dummy">
+  <div class="left-sub-container ">
+      <div class="top-sub-container ">
+          <div class="left-sub-sub-container ">
+            <div class="cards-container">
+                <div class="left-cards">
+                  <div class="left-upper-cards">
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/stock.png" width="30px" height="30px"/>
+                         Total Stock
+                      </div>
+                      <div class="div-body">
+                        {{inventory.totalStock}}                        
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/inbound.png" width="30px" height="30px"/>
+                         Total Inbound
+                      </div>
+                      <div class="div-body">
+                        {{inventory.totalInboundLedgers}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/outbound.png" width="30px" height="30px"/>
+                        Total Outbound
+                      </div>
+                      <div class="div-body">
+                        {{inventory.totalOutboundLedgers}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/inventory_value.png" width="30px" height="30px"/>
+                        Inventory value
+                      </div>
+                      <div class="div-body">
+                        {{inventory.inventoryValue | currency: 'INR'}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/sales.png" width="30px" height="30px"/>
+                        Total sales
+                      </div>
+                      <div class="div-body">
+                        {{inventory.salesValue | currency: 'INR'}}
+                      </div>
+                    </div>
+                    <div class="cards">
+                      <div class="div-header">
+                        <img src="../../assets/images/broken.png" width="30px" height="30px"/>
+                        Damaged
+                      </div>
+                      <div class="div-body">
+                        {{inventory.totalDamagedStock}}
+                      </div>
+                    </div>
+                  </div>
+  
+                </div>
+            </div>
+          </div>
+      </div>
+      <div class="bottom-sub-container">
+          <div class="psuedo-card" style="background-color: #fff;">
+            <div class="detail-header">
+              <h3>Product details</h3>
+              <div style="align-content: center;">
+                <input type="text" id="search" #criteria
+                (input)="updateCriteria(criteria.value)"
+                placeholder="Search products"/>
+              </div>
+            </div>
+            
+            <div  [ngClass]='products.length?"table-container":"not-found"' class="table-container" >
+              <img *ngIf='!products.length' id="nothing" src="../../assets/images/nothing.png" width="400" height="400"/>
+                  <div *ngIf='!products.length'>No Products Found</div>
+              <table *ngIf='products.length' #product id="ledgers" class="flex-table">
+                  <thead style="position: sticky; top: 0px; background-color: white; z-index: 1;">
+                      <tr style="background-color: #9f9f9f;">
+                          <th>Name</th>
+                          <th>Cost</th>
+                          <th>Stock</th>
+                          <th>Damaged</th>
+                      </tr>
+                  </thead>
+                  <tbody  >
+                      <ng-container *ngFor="let a of products" >
+                          <tr class="clickable-row" (click)='productClicked(a.productId,a.name)'  >
+                              <td>{{a.name}}</td>
+                              <td>{{a.unitCost}}</td> 
+                              <td>{{a.currentStock}}</td>
+                              <td>{{a.damagedStock}}</td>
+                          </tr>
+                      </ng-container>               
+                  </tbody>
+              </table>  
+          </div>      
+          </div>
+          <div class="psuedo-card" style="background-color: #fff;">
+            <div class="detail-header">
+              <h3></h3>
+            </div>
+            <div id="linePlot"></div>
+          </div>
+      </div>
+  </div>
+  <div class="right-sub-container">
+      <div class="cards">
+        <h4>Ledger Distribution</h4>
+        <div *ngIf='newProduct' style="display: flex; justify-content: center;" id="pie"></div>
+        <div *ngIf='!newProduct'>This product has no Ledgers</div>
+      </div>
+      <div class="cards">
+        <div id="plot"></div>
+      </div>
+  </div>
+</div>

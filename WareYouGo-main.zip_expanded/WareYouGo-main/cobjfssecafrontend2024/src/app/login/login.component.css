@@ -1,0 +1,88 @@
+body{
+    width: auto;
+    height: 100vh;
+
+}
+.maxContainer{
+    background-image: url("Logistics.jpg");
+    min-width: 100%;
+    min-height: 100%;
+    background-size:cover;
+}
+.user_card {
+    height: 400px;
+    width: 350px;
+    margin-top: 75px;
+    margin-bottom: auto;
+    background: #bec4c6;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 8px;
+
+}
+#header{
+   
+        font-size: 70px;
+        font-weight: 600;
+        background-image: linear-gradient(to left, #3e899c, #dad7dd);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+        
+      
+} 
+
+.form_container {
+    margin-top: 50px;
+}
+.login_btn {
+    width: 100%;
+    background: #4d4d4d !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #4d4d4d  !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #4d4d4d !important;
+}
+a {
+color: white;
+text-decoration: none;
+background-color: transparent;
+-webkit-text-decoration-skip: objects;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    margin-left: 10px;
+    
+}
+.field{
+    height:38px;
+    margin-top: 20px;
+}
+.input-group-append{
+    max-height: 100%;
+}

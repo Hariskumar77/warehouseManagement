@@ -1,0 +1,135 @@
+<!-- <div id="container" class="product-inbound-container">
+    <div class="form-container">
+        <h2 class="form-heading">Product Inbound</h2>
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+           
+           
+            
+        </form>
+    </div>
+</div> -->
+
+<div id="container" class="product-inbound-container">
+    <div class="form-container">
+        <h2 class="form-heading">Product Inbound</h2>
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <div class="form-row">
+                <!-- Column 1 -->
+                <div class="form-column">
+                    <!-- Place half of your form groups here -->
+                    <!-- <div class="form-group">
+                        <label for="productInboundID">Product Inbound ID</label>
+                        <input type="text" class="form-control" id="productInboundID" [(ngModel)]="productInbound.productInboundID" name="productInboundID" required>
+                    </div> -->
+                    <div class="product-button-group-row">
+                        <div class="form-group">
+                            <label for="productID">Product ID</label>
+                            <input [(ngModel)]='productId'
+                            type="text" class="form-control" id="productID" [(ngModel)]="productInbound.productID" name="productID" required>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center;">
+                            <button (click)='fetchProductDetails()' class="btn btn-primary">
+                                Fetch Details
+                            </button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" disabled class="form-control disabled" id="productName" [(ngModel)]="productInbound.productName" name="productName" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="productCode">Product Code</label>
+                        <input type="number" disabled class="form-control disabled" id="productCode" [(ngModel)]="productInbound.productCode" name="productCode" required>
+                    </div> -->
+                    <!-- <div class="form-group">
+                        <label for="batchNumber">Batch Number</label>
+                        <input type="text" class="form-control" id="batchNumber" [(ngModel)]="productInbound.batchNumber" name="batchNumber" required>
+                    </div> -->
+
+                    <div class="dimension-group">
+                        <div class="form-group">
+                            <label for="length">Length</label>
+                            <input type="number" disabled class="form-control disabled" id="length" [(ngModel)]="productInbound.length" name="length" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="width">Width</label>
+                            <input type="number" disabled class="form-control disabled" id="width" [(ngModel)]="productInbound.width" name="width" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">Height</label>
+                            <input type="number" disabled class="form-control disabled" id="height" [(ngModel)]="productInbound.height" name="height" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="productWeight">Product Weight</label>
+                        <input type="number" disabled class="form-control disabled" id="productWeight" [(ngModel)]="productInbound.productWeight" name="productWeight" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Quantity</label>
+                        <input type="number" class="form-control" id="quantity" [(ngModel)]="productInbound.quantity" name="quantity" required>
+                    </div>
+                    <div class="button-group-row">
+                        
+                        <div class="form-add">
+                            <a class="form-add-link" href="/product">Add new Product</a>
+                        </div>
+                        <div class="form-update">
+                            <a class="form-update-link" href="/product-update">Update Product</a>
+                        </div>
+                        <div class="form-delete">
+                            <a class="form-delete-link" href="/product-delete">Delete Product</a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="form-column">
+                    <!-- Place the other half of your form groups here -->
+                    <div class="form-group">
+                        <label for="supplierName">Supplier Name</label>
+                        <input type="text" class="form-control" id="supplierName" [(ngModel)]="productInbound.supplierName" name="supplierName" required>
+                    </div>
+                    <!-- <div class="form-group">
+                        <label for="supplierLocation">Supplier Location</label>
+                        <input type="text" class="form-control" id="supplierLocation" [(ngModel)]="productInbound.supplierLocation" name="supplierLocation" required>
+                    </div> -->
+                    <div class="form-group">
+                        <label for="purchaseOrderNumber">Purchase Order Number</label>
+                        <input type="number" class="form-control" id="purchaseOrderNumber" [(ngModel)]="productInbound.purchaseOrderNumber" name="purchaseOrderNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfPOInsurance">Date of PO Insurance</label>
+                        <input type="date" class="form-control" id="dateOfPOInsurance" [(ngModel)]="productInbound.dateOfPOInsurance" name="dateOfPOInsurance" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dateOfDelivery">Date of Delivery</label>
+                        <input type="date" class="form-control" id="dateOfDelivery" [(ngModel)]="productInbound.dateOfDelivery" name="dateOfDelivery" required>
+                    </div>
+                    
+                    <div class="button-group-row">
+                        <button type="submit" class="btn btn-primary" style="margin-bottom: 25px;">
+                            <a href="/display-locations" class="btn-color">Submit</a>
+                        </button>
+                    </div>
+                    <div class="button-group-row">
+                        <div class="form-add">
+                            <a class="form-add-link" href="/location">Add new Location</a>
+                        </div>
+                        <div class="form-update">
+                            <a class="form-update-link" href="/location-update">Update Location</a>
+                        </div>
+                        <div class="form-delete">
+                            <a class="form-delete-link" href="/location-delete">Delete Location</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>
+            <!-- Rest of your form -->
+           
+        </form>
+    </div>
+</div>
+

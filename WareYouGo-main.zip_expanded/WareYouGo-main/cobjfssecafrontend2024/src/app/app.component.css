@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    justify-content: left;
+    background-color: bisque;
+}
+
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    margin: 10px;
+}
+
+.navbar li{
+    margin: 0px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: brown;
+    padding: 10px 15px;
+    margin: 0px;
+}
+
+.navbar a:hover{
+    background-color: burlywood;
+}
+
+:host {
+    display: block;
+    height: 100%;
+  }
+  
+  

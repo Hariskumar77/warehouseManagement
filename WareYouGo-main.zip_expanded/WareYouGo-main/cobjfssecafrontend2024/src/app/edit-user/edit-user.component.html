@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <!-- <header>
+        <h1 style="text-shadow: 2px 2px 4px #000000;color: #ccd7a9;">Ware-You-Go</h1>
+
+    </header> -->
+    <div id="container">
+        <div class="parent-container">
+        <div id="userDetails">
+            <div class="userheading">
+            <h2 id="detailHeading">USER DETAILS</h2>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Name</strong></td>
+                    <td>
+                        <span *ngIf="!isEditingName">{{ user.name }}</span>
+                        <input *ngIf="isEditingName" style="padding: 4px;" type="text" [(ngModel)]="editedName">
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Mobile</strong></td>
+                    <td>
+                        <span *ngIf="!isEditingMobile">{{ user.mobileNumber }}</span>
+                        <input *ngIf="isEditingMobile" style="padding: 4px;" type="text" [(ngModel)]="editedMobileNumber">
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Email</strong></td>
+                    <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                    <td><strong>Role</strong></td>
+                    <td>{{user.userType }}</td>
+                </tr>
+            </table>
+            <div class="button-container">
+                <button *ngIf="!isEditingName && !isEditingMobile" (click)="enableEditing()">Edit</button>
+                <button *ngIf="isEditingName || isEditingMobile" (click)="saveChanges()">Save</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+</body>
+</html>
+
+
+
+
+

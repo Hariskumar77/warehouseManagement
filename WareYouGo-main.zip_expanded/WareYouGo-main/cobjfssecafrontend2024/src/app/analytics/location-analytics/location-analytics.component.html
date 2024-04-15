@@ -1,0 +1,19 @@
+<div style="display: flex;height: 100%;">
+    <div style="display: flex;flex-grow: 3;justify-content: center;" id="plot">
+        <div class="inner-text-div" *ngIf='!isPlotClicked'>
+            Click on a chart to get started
+        </div>
+    </div>
+    <div class="plot-nav" >
+        <div class="card">
+            <button (click)='plotStorageDistribution()'>Storage Distribution Across
+                Warehouse
+            </button>
+        </div>
+        <div class="card">
+            <button (click)='plotStorage3D()'>3D Plot of Storage Distriution Across
+                Warehouse
+            </button>
+        </div>
+    </div>
+</div>

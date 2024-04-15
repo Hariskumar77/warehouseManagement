@@ -1,0 +1,43 @@
+button { 
+    padding: 2px; 
+    border: none;
+    background-color: #7a5c3c !important;
+    color: #fff !important;
+} 
+
+.nav-register{
+    background-color: #7a5c3c !important;
+    color: #fff !important;
+}
+#nav{
+    background-color:#fff;
+    color: #7a5c3c;
+    
+    
+}
+.nav-link{
+    font-weight: bolder;
+    color: #7a5c3c;
+    
+
+}
+.btn{
+    font-weight: bolder;
+    color: #7a5c3c;
+    
+}
+a{
+    text-decoration: none;
+    color: #7a5c3c;
+   
+
+    
+}
+.logo{
+    height: 70%;   
+    width: 40%;
+    mix-blend-mode:multiply;
+    
+}
+
+

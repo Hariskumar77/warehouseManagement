@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+    <body>
+        <div class="maxContainer">
+            <div class="section">
+                <br>
+                <br>
+                <div><h1 id="header">Ware-you-go</h1></div>
+                <div class="d-flex justify-content-center">
+                    <div class="user_card">
+                        <div class="d-flex justify-content-center">
+                            <h3 class="form-title text-center">LOGIN</h3>
+                            
+                        </div>
+                        <div class="d-flex justify-content-center form_container">
+                            <form #form="ngForm">
+                                
+                                <div class="input-group mb-3 field">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <div>
+        
+                                        <input type="email" name="email" class="form-control input_user" placeholder="Email" [(ngModel)]="user.email" required #email="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                                             <div *ngIf="email.touched && email.invalid" class="error">
+                                                <span *ngIf="email.errors?.required">Email is required.</span>
+                                                <span *ngIf="email.errors?.pattern">Invalid Email.</span>
+                                             </div>
+
+
+                                        
+                                      </div>
+                                </div>
+                                <div class="input-group mb-2 field">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                    </div>
+                                    <div>
+                                    <input type="password" name="password" class="form-control input_pass" placeholder="password" [(ngModel)]="user.password" required  minlength="8">
+                                    <div *ngIf="form.controls && form.controls['password'] && form.controls['password'].touched && form.controls['password'].invalid"
+                                    class="error">Invalid password</div>
+                                    </div>
+                                </div>
+                               
+                               
+                                <div class="mt-4">
+                                    <div class="d-flex justify-content-center links pb-3">
+                                        <a routerLink="/forgotpassword" class="ml-2">Forgot Password?</a>
+                                    </div>
+                                
+
+                                
+                                </div>
+                                <div class="d-flex justify-content-center mt-3 login_container">
+                                  <button type="submit" name="button" class="btn login_btn" (click) = "onLoginClick()"> Login </button>
+                              </div>
+                              <div class="mt-4">
+                                <div class="d-flex justify-content-center links pb-3">
+                                    Don't have an account? <a routerLink="/register" class="ml-2">Register</a>
+                                </div>
+                              </div>
+                            </form>
+                        </div>
+                       
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </body>       
+        
+        
+    
+</html>

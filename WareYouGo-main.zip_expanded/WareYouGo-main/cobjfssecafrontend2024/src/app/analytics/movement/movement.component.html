@@ -1,0 +1,12 @@
+<div style="display: flex;height: 100%;">
+    <div style="display: flex;flex-grow: 3;justify-content: center;" id="plotDiv">
+        <div class="inner-text-div" *ngIf='!isPlotClicked'>
+            Click on a chart to get started
+        </div>
+    </div>
+    <div class="plot-nav" >
+        <div class="card">
+            <button (click)='plotCostDistribution()'>Area Chart of Ledgers by Type</button>
+        </div>
+    </div>
+</div>

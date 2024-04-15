@@ -1,0 +1,27 @@
+.flex-container {
+    display: flex;
+    flex-direction: row; /* Horizontal division */
+  }
+  
+  .left-section, .right-section {
+    flex: 1;
+    border: 1px solid #ccc;
+    
+  }
+  
+  .right-section {
+    
+    background-color: #e0e0e0;
+    padding: 50px;
+    font: size 70px;
+  }
+  
+  .left-section {
+    background-color: #f0f0f0;
+  }
+  
+  .serviceimg{
+      max-width: 100%;
+      height: auto;
+      filter:brightness(0.7)
+}

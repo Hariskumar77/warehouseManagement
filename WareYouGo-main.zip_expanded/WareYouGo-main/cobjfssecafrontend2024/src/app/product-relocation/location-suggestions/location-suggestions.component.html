@@ -1,0 +1,37 @@
+<div id="container" class="product-relocation-container">
+  <div class="form-container">
+    <h2 class="form-heading">Product Relocation - Location Suggestions</h2>
+    <div style="padding: 30px 100px">
+      <p>Old Location Id : {{oldLocationId}}</p>
+      <p>Product Id : {{productId}}</p>
+      <table class="table table-striped" style="text-align: center">
+        <thead>
+          <tr>
+            <th>Location ID</th>
+            <th>Rack</th>
+            <th>Shelf</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of locationSuggestions">
+            <td>{{item.location.locationId}}</td>
+            <td>{{item.location.rackId}}</td>
+            <td>{{item.location.shelfId}}</td>
+            <td>
+              <input type="radio" name="location" [(ngModel)]="selectedLocation" [value]="item.location.locationId"/>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="button-group-row">
+        <button type="submit"
+         class="btn btn-primary btn-color"
+         (click)="temporaryBlock()"
+         [disabled]="!selectedLocation"
+         >Temporary Block</button>
+         
+      </div>
+    </div>
+  </div>
+</div>

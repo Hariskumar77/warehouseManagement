@@ -1,0 +1,30 @@
+.navbar{
+    display: flex;
+    justify-content: left;
+    background-color: #776B5D;
+}
+
+.navbar ul{
+    list-style-type: none;
+    display: flex;
+    margin: 10px;
+}
+
+.navbar li{
+    margin: 0px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+    padding: 10px 15px;
+    margin: 0px;
+}
+
+.navbar a:hover{
+    color: #7fa38d;
+}
+
+.activelink{
+    background-color: white;
+}

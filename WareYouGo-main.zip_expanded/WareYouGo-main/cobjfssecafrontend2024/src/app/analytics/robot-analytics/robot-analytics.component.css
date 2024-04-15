@@ -1,0 +1,58 @@
+.card {
+    margin-right: 27px;
+    margin-bottom: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    text-align: center;
+  }
+
+
+  :host {
+    display: block;
+    height: calc(67% - 70px);
+  }
+
+  #plotDiv{
+    position: relative;
+  }
+
+  .plot-nav{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    max-width: 450px;
+    min-width: 450px;
+  }
+
+  .plot-nav button{
+    border: none;
+    background-color: transparent;
+    font-family: inherit;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: space-around;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  }
+
+  .inner-text-div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }

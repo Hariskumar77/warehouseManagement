@@ -1,0 +1,246 @@
+ .card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.container-details {
+    display: flex;
+    height: calc(100vh - 80px);
+    padding: 20px;
+}
+
+.top-sub-container {
+    display: flex;
+    flex-grow: 1.5;
+    
+}
+
+.bottom-sub-container {
+    flex-grow: 12;
+    padding: 0px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.right-sub-container {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 0px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-left: 10px;
+    width: min-content;
+    text-align: center;
+}
+
+.left-sub-container {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.top-sub-sub-container {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    display: flex;
+
+}
+
+.bottom-sub-sub-container {
+    flex-grow: 1.5;
+    display: flex;
+
+}
+
+.right-sub-sub-container{
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+    width: min-content;
+}
+
+.left-sub-sub-container{
+    flex-grow: 4;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    display: flex;
+    width: min-content;
+}
+
+.cards{
+    border: 1px solid;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #c7af93; 
+}
+
+.bottom-sub-container .cards{
+    background-color: whitesmoke;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+.div-header{
+    color: black;
+    background-color: #c7af93;
+    padding: 7px;
+    font-size: 18px;
+    font-weight: bold;
+    align-content: center;
+    display: flex;
+}
+
+.div-body{
+    padding: 10px;
+    font-size: 25px;
+}
+
+.cards-container{
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-cards{
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-cards{
+    flex-grow: 1;
+}
+
+.left-upper-cards{
+    display: flex;
+    flex-grow: 1;
+}
+
+.left-bottom-cards{
+    display: flex;
+    flex-grow: 1;
+}
+
+
+.right-upper-cards{
+    display: flex;
+}
+
+.detail-header{
+    display: flex;
+}
+
+.detail{
+    flex-grow: 1;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.3);
+}
+
+.right-cards .cards .div-body{
+    font-size: 18px;
+}
+
+.right-cards .cards {
+    height : 95%
+}
+
+.label {
+    width: 40px; /* Fixed width for labels */
+    margin-right: 50px; 
+}
+
+img{
+    margin :5px;
+    padding : 5px;
+}
+
+.bottom-cards {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    margin: 5px;
+    background-color: #c7af93; 
+}
+
+.bottom-cards h3{
+   text-align: center;
+   font-size: 22px; 
+   margin :8px
+}
+
+.bottom-sub-container .bottom-cards .cards{
+    display: flex;
+    flex-direction: row;
+}
+
+.detail-content-label{
+    align-content: center;
+    flex-grow: 3;
+    font-size: 25px;
+}
+
+.detail-content-value{
+    align-content: center;
+    margin-left: auto;
+    font-size: 25px;
+    padding-right: 10px;
+}
+
+.col-1{
+    flex-grow: 1;
+}
+
+.col-2{
+    flex-grow: 1;
+}
+
+.col-3{
+    flex-grow: 1;
+}
+
+.ledger-row {
+    display: flex;
+    border: 1px solid;
+    flex: 1;
+    justify-content: space-between;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin: 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #e4e4e4;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.clickable-row {
+    cursor: pointer;
+  }
+  
+  .clickable-row:hover {
+    cursor: pointer;
+    background-color: rgb(177, 177, 177);
+  }
+

@@ -1,0 +1,14 @@
+<div class="add-product-container" *ngIf="!isFetched">
+  <form  class="form-container" (ngSubmit)='onDelete(product.productId)' #productForm=ngForm >
+    <h2 class="form-heading">Delete Product</h2>
+    <div class="form-group">
+      <label for="productId">Enter Product ID</label>
+      <input type="text" id="productId" name="productId" class="form-control"
+        required  [(ngModel)]='product.productId'  >
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Delete Product</button>
+    </div>
+  </form>
+</div>

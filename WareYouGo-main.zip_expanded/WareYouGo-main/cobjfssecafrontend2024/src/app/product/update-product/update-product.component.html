@@ -1,0 +1,65 @@
+
+<div class="add-product-container" *ngIf="!isFetched">
+  <form  class="form-container" (ngSubmit)='onSubmit(product.productId)' #productForm=ngForm >
+    <h2 class="form-heading">Update Product</h2>
+    <div class="form-group">
+      <label for="productId">Enter Product ID</label>
+      <input type="text" id="productId" name="productId" class="form-control"
+        required  [(ngModel)]='product.productId'>
+    </div>
+
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Fetch Product</button>
+    </div>
+  </form>
+</div>
+<div class="add-product-container" *ngIf="isFetched">
+  <form  class="form-container" (ngSubmit)='onUpdate()' #productForm=ngForm >
+    <h2 class="form-heading">Update Product</h2>
+    <div class="form-group">
+      <label for="productId">Product ID</label>
+      <input type="text" id="productId" name="productId" class="form-control"
+        required disabled="true" [(ngModel)]='product.productId'>
+    </div>
+    <div class="form-group">
+      <label for="productName">Product Name</label>
+      <input type="text" id="productName" name="productName" class="form-control"
+        required  [(ngModel)]='product.name'>
+    </div>
+    <div class="form-group">
+      <label for="uom">Unit of Measure</label>
+      <input type="text" id="uom" name="uom" class="form-control"
+      required [(ngModel)]='product.uom'>
+    </div>
+    <div class="form-group">
+      <label for="unitCost">Unit Cost (₹)</label>
+      <input type="number" id="unitCost" name="unitCost" class="form-control"
+      required [(ngModel)]='product.unitCost'>
+    </div>
+    <div class="dimension-group">
+      <div class="form-group">
+        <label for="length">Length (in metres)</label>
+        <input type="number" id="length" name="length" class="dimension-content"
+        required [(ngModel)]='product.length'>
+      </div>
+      <div class="form-group">
+        <label for="width">Width (in metres)</label>
+        <input type="number" id="width" name="width" class="dimension-content"
+        required [(ngModel)]='product.width'  >
+      </div>
+      <div class="form-group">
+        <label for="height">Height (in metres)</label>
+        <input type="number" id="height" name="height" class="dimension-content"
+        required [(ngModel)]='product.height'>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="weight">Product Weight (in kg)</label>
+      <input type="number" id="weight" name="weight" class="form-control"
+      required [(ngModel)]='product.weight' >
+    </div>
+    <div class="button-container">
+      <button type="submit" class="btn btn-primary" [disabled]="!productForm.form.valid">Update Product</button>
+    </div>
+  </form>
+</div>

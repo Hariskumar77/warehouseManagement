@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+
+    <!-- <app-header></app-header> -->
+    <h2>Pending Access Request</h2>
+    <div id="container">
+
+   
+    <table class="user-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Role</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="user-row" *ngFor="let user of pendingUsers">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.mobileNumber}}</td>
+            <td>{{user.userType}}</td>
+            <td> <button class="accept" (click)="acceptUser(user)"><i class="fas fa-check"></i>accept</button> 
+                <span><button class="reject"(click)="rejectUser(user)"><i class="fas fa-times"></i>deny</button></span>
+                 
+            </td>
+            
+        </tr>
+    </tbody>
+    </table>
+</div>
+</body>
+</html>

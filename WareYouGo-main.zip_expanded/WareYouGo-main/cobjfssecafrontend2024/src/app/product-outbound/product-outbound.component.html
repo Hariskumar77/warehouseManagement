@@ -1,0 +1,71 @@
+<div id="container" class="product-outbound-container">
+    <div class="form-container">
+        <h2 class="form-heading">Product Outbound</h2>
+        <div *ngIf="status">
+        <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
+            <div class="form-row">
+                <!-- Column 1 -->
+                <div class="form-column">
+                    <!-- Place half of your form groups here -->
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <select id="productName" class="form-control" placeholder="Enter product name" [(ngModel)]="productOutbound.productName" name="productName" (change)="updateProductCode()" required>
+                            <option *ngFor="let p of product" [value]="p.name">{{ p.name }}</option>
+                        </select>
+                        <!-- <input type="text" class="form-control" id="productName" placeholder="Enter product name" [(ngModel)]="productOutbound.productName" name="productName" required> -->
+                    </div>
+          
+                    <div class="form-group">
+                        <label for="productID">Product ID</label>
+                        <input type="text" class="form-control" id="productID" placeholder="Enter product ID" [(ngModel)]="productOutbound.productID" name="productID" required [disabled]="true">
+                    </div>
+          
+                    <div class="form-group">
+                      <label for="productQuantity">Product Quantity</label>
+                      <input type="number" class="form-control" id="productQuantity" placeholder="Enter product quantity" [(ngModel)]="productOutbound.productQuantity" name="productQuantity" required min="0">
+                  </div>
+                   
+                  <div class="form-group">
+                    <label for="deliveryLocation">Delivery Location</label>
+                    <input type="text" class="form-control" id="deliveryLocation" placeholder="Enter delivery location" [(ngModel)]="productOutbound.deliveryLocation" name="deliveryLocation" required>
+                </div>
+                <div class="button-group-row">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+    <div *ngIf="!status">
+        <div *ngIf ="flag">
+            <marquee ><h2 class="warning">Product Stock not Available</h2></marquee>
+        </div>
+        <div *ngIf ="!flag">
+            <table class="list-table">
+                <tr *ngFor="let l of locations; let i = index">
+                    <td class="checkbox-cell">
+                        <input  class="rvalue" type="checkbox" [(ngModel)]="checkboxValues[i]" [disabled]="disableFlag" (change)="onCheckboxChange1($event.target.checked, i)">
+        
+
+                    </td>
+                  <td><input class="tvalue"  type="text" #checkfield value="Rack-{{l.rackId}},Shelf-{{l.shelfId}},Location-ID-{{l.locationId}}" readonly> </td> 
+                </tr>
+              </table>
+              
+        <br>
+        <div class="button-container">
+          <button type="submit" class="btn btn-primary" (click)= "saveList()" [disabled]="!isAnyCheckboxChecked()">Save</button>
+         
+              
+      </div>
+      
+    </div>
+    <div class="form2">
+      <h2 *ngIf="flag1">Order Confirmed</h2>
+  </div>
+ 
+</div>
+    </div>
+</div>
+   

@@ -1,0 +1,5 @@
+enum StatusCode{
+    DEFAULT,
+    TEMPORARILY_BLOCKED,
+    PERMANENTLY_BLOCKED
+}

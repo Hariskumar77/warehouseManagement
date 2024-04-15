@@ -1,0 +1,31 @@
+<div class="container">
+    <div *ngIf='navMode'>
+      <div class="nav-card-row" >
+        <div class="nav-card" *ngFor="let card of allCards">
+          <a [routerLink]='card.link' >
+            <img [src]= 'card.imgSrc' width="150px"/>
+            <h2 class="card-header">{{ card.title }}</h2>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div *ngIf='!navMode' class="card-row">
+      <div class="card" *ngFor="let card of topCards">
+        <a [routerLink]='card.link' routerLinkActive='' (click)='navModeToggle()'>
+          <h2 class="card-header">{{ card.title }}</h2>
+          <img [src]= 'card.imgSrc' width="150px"/>
+          <p>{{ card.content }}</p>
+        </a>
+      </div>
+    </div>
+    <div *ngIf='!navMode' class="card-row">
+      <div class="card" *ngFor="let card of bottomCards">
+      <a [routerLink]='card.link' routerLinkActive='' (click)='navModeToggle()'>
+        <h2>{{ card.title }}</h2>
+        <img [src]= 'card.imgSrc' width="150px"/>
+        <p>{{ card.content }}</p>
+      </a>
+      </div>
+    </div>
+  </div>
+  <router-outlet ></router-outlet>

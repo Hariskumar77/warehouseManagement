@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    justify-content: space-around;
+  }
+  
+  .card-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .card {
+    width: calc(33% - 70px); 
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.5s;
+    text-align: center;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .card p {
+    font-size: 14px;
+  }
+
+  .card img{
+    margin-top: 15px;
+    height: 150px;
+    
+  }
+  
+  .nav-card-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+
+  .nav-card{
+    width: calc(33% - 10px); 
+    margin: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-card:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.8);
+  }
+
+  .nav-card img {
+    width: 50px; /* Adjust the size of the image as per your requirement */
+    margin-right: 15px; /* Add space between the image and title */
+  }
+  
+  .nav-card h2 {
+    flex: 1; /* Take up remaining space */
+    text-align: left; /* Align the title to the left */
+    margin: 0; /* Reset margin */
+    font-size: 20px; /* Adjust font size as per your requirement */
+  }
+
+  .nav-card a{
+    display: flex;
+  }
+
+  a{
+    text-decoration: none;
+  }
